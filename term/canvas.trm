@@ -1330,7 +1330,10 @@ CANVAS_path(int p)
 {
     switch (p) {
 	case 1: /* Close path */
-		fprintf(gpoutfile, "ctx.closePath();\n");
+    // We don't really need to force close the path in canvas.
+    // We assume the user already gives us a closed path.
+    // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/closePath
+		//fprintf(gpoutfile, "ctx.closePath();\n");
 		already_closed = TRUE;
 		break;
 	case 0:
