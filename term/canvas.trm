@@ -1078,7 +1078,7 @@ CANVAS_put_text(unsigned int x, unsigned int y, const char *str)
 
     /* Sanitize string by escaping quote characters */
     do {
-	if (*str == '"' || *str == '\\')
+	if (*str == '"')
 	    fputc('\\', gpoutfile);
 	fputc(*str++, gpoutfile);
     } while (*str);
